@@ -7,6 +7,12 @@ from datetime import datetime
 import requests
 
 
+st.set_page_config(
+    page_icon='🗓️',
+    page_title='iCalendar Converter'
+)
+
+
 def extract_dates_from_ical(url, partner, unit):
     try:
         response = requests.get(url)
@@ -45,7 +51,7 @@ if uploaded_file is not None:
 
     if st.button('Pull Occupancy Data', use_container_width=True):
         df = df[df.option]
-        st.caption("RELAVENT CONTENT")
+        st.caption("RELEVANT CALENDARS")
         st.dataframe(df, use_container_width=True)
 
         output_dates = []
