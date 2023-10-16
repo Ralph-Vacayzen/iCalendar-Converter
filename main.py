@@ -12,6 +12,12 @@ st.set_page_config(
     page_title='iCalendar Converter'
 )
 
+with st.sidebar:
+    if st.button('Clear Cache & Cookies', use_container_width=True):
+        st.cache_data.clear()
+        st.cache_resource.clear()
+        st.toast('💵 + 🍪 **cleared**!')
+
 
 def extract_dates_from_ical(url, partner, unit):
     try:
