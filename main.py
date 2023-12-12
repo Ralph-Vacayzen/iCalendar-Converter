@@ -23,6 +23,7 @@ def extract_dates_from_ical(url, partner, unit):
     try:
         response = requests.get(url)
 
+        st.toast('Fetching ' + partner + ' -> ' + unit + '...')
         if response.status_code == 200:
             cal         = Calendar.from_ical(response.text)
             event_dates = []
